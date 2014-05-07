@@ -1,0 +1,29 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+idea {
+    project {
+        languageLevel = '1.7'
+    }
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.eclipse.jetty:jetty-server:9.1.4.v20140401'
+    compile 'org.eclipse.jetty:jetty-webapp:9.1.4.v20140401'
+    compile 'org.eclipse.jetty:jetty-servlet:9.1.4.v20140401'
+    compile 'org.eclipse.jetty:jetty-jsp:9.1.4.v20140401'
+}
+
+apply plugin: 'application'
+mainClassName = 'ca.adrianchung.JettyServer'
